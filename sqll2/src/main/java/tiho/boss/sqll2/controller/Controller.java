@@ -1,20 +1,18 @@
 package tiho.boss.sqll2.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import tiho.boss.sqll2.Persons;
-import tiho.boss.sqll2.repository.Repository;
+import tiho.boss.sqll2.repository.SRepository;
 
 import java.util.List;
 
 @RestController
 public class Controller {
-    private final Repository repository;
+    private final SRepository repository;
 
-    @Autowired
-    public Controller(final Repository repository) {
+    public Controller(SRepository repository) {
         this.repository = repository;
     }
 
