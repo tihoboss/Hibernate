@@ -12,19 +12,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 public class Persons {
-    @Id
-    @Column(nullable = false, length = 255)
-    private String name;
+    @EmbeddedId
+    private Person id;
 
-    @Column(nullable = false, length = 255)
-    private String surname;
+    @Column(name = "phone_number",nullable = false, length = 255)
+    private String phoneNumber;
 
-    @Column(nullable = false)
-    private int age;
-
-    @Column(nullable = false, length = 255)
-    private String phone_number;
-
-    @Column(nullable = false, length = 1030)
-    private String city_of_living;
+    @Column(name = "city_of_living", nullable = false, length = 255)
+    private String cityOfLiving;
 }
